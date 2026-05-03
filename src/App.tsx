@@ -27,11 +27,15 @@ class Clock extends React.Component<ClockProps, ClockState> {
       const newTime = new Date().toUTCString().slice(-12, -4);
 
       this.setState({ time: newTime });
+// eslint-disable-next-line no-console
+      console.log(newTime);
     }, 1000);
   }
 
   componentDidUpdate(prevProps: ClockProps) {
     if (prevProps.name !== this.props.name) {
+      // eslint-disable-next-line no-console
+      console.warn(`Renamed from ${prevProps.name} to ${this.props.name}`);
     }
   }
 
